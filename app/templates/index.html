@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Meal Prep</title>
+    <title>🍱 Student Meal Prep</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <h1>🍱 Student Meal Prep Weekly Dashboard</h1>
 
     <div class="days">
-        <button onclick="loadDay('monday')">Monday</button>
-        <button onclick="loadDay('tuesday')">Tuesday</button>
-        <button onclick="loadDay('wednesday')">Wednesday</button>
-        <button onclick="loadDay('thursday')">Thursday</button>
-        <button onclick="loadDay('friday')">Friday</button>
-        <button onclick="loadDay('saturday')">Saturday</button>
-        <button onclick="loadDay('sunday')">Sunday</button>
+        <button onclick="loadDay('monday', this)">Monday</button>
+        <button onclick="loadDay('tuesday', this)">Tuesday</button>
+        <button onclick="loadDay('wednesday', this)">Wednesday</button>
+        <button onclick="loadDay('thursday', this)">Thursday</button>
+        <button onclick="loadDay('friday', this)">Friday</button>
+        <button onclick="loadDay('saturday', this)">Saturday</button>
+        <button onclick="loadDay('sunday', this)">Sunday</button>
     </div>
 
     <div id="meal-info">
-        <p>Click a day to see meals!</p>
+        <p style="text-align:center; opacity:0.5;">👆 Click a day to see meals!</p>
     </div>
 
-    <div id="tracker">
-        <h3>💰 Weekly Spending: $<span id="total">0.00</span></h3>
+    
+    <div id="suggest-box">
+        <h3>🤖 AI Meal Suggester</h3>
+        <p>Tell me what you feel like eating!</p>
+        <input type="text" id="preference" placeholder="e.g. something spicy and cheap...">
+        <button onclick="suggestMeal()">✨ Get AI Suggestion</button>
+        <div id="suggestion"></div>
+    </div>
+
+<div id="tracker">
+        💰 Weekly Spending: $<span id="total">0.00</span>
     </div>
 
     <script src="/static/app.js"></script>
