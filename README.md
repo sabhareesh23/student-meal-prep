@@ -1,105 +1,51 @@
-# StudentMealPrep AI
+# Student Meal Prep App
 
-## Overview
+A Flask web app that helps students plan weekly meals and get AI-powered meal suggestions.
 
-StudentMealPrep AI is a Flask-based web application designed to help international students plan affordable, healthy, and easy-to-cook meals based on their budget and dietary preferences. The application uses Google Gemini AI to generate personalized meal plans, grocery shopping lists, estimated costs, and cooking instructions.
+## Team
+- Partner A (Sabhareesh) - Backend
+- Partner B - Frontend
 
-## Problem Statement
+## What it does
+- Weekly meal dashboard (click a day to see meals)
+- Shows ingredients and daily cost per day
+- Tracks total weekly spending
+- AI meal suggester powered by Google Gemini
 
-Many international students face challenges such as:
-
-- Limited food budgets
-- Lack of meal planning experience
-- Limited cooking time
-- Difficulty finding affordable and healthy meals
-- Managing grocery shopping efficiently
-
-StudentMealPrep AI helps students make informed meal decisions while saving time and money.
-
-## Features
-
-### Frontend Features
-- Home page
-- AI Meal Planner page
-- Recipes page
-- Grocery List page
-- About page
-
-### Backend Features
-- Flask web application
-- REST API endpoints
-- Gemini AI integration
-- SQLite database support
-
-### AI Meal Planning
-Users can provide:
-- Weekly budget
-- Dietary preference (Vegetarian, Vegan, Non-Vegetarian)
-- Number of days
-
-The AI generates:
-- Breakfast suggestions
-- Lunch suggestions
-- Dinner suggestions
-- Grocery shopping list
-- Estimated food cost
-- Meal preparation instructions
-
-### API Endpoint
-
-Generate meal plans through the API:
-
-
-## Technologies Used
-
-- Python
-- Flask
-- Flask-SQLAlchemy
+## Technologies
+- Python & Flask
+- HTML, CSS, JavaScript
 - Google Gemini AI
-- HTML
-- CSS
-- SQLite
 - Docker
 - Pytest
+- Git & GitHub
 
-## Project Structure
-
-student-meal-prep-ai/
-
-├── app/
-
-│   ├── __init__.py
-
-│   ├── routes.py
-
-│   ├── api.py
-
-│   ├── models.py
-
-│   ├── ai_service.py
-
-│   ├── templates/
-
-│   └── static/
-
-├── tests/
-
-├── run.py
-
-├── requirements.txt
-
-├── Dockerfile
-
-├── .gitignore
-
-├── .env
-
-└── README.md
-
-## Installation
-
-### Clone Repository
+## How to run
 
 ```bash
-git clone <repository-url>
-cd student-meal-prep-ai
+git clone https://github.com/sabhareesh23/student-meal-prep.git
+cd student-meal-prep
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+echo "GEMINI_API_KEY=your_key_here" > .env
+python run.py
+```
+
+Visit http://127.0.0.1:5000
+
+## API Endpoints
+- GET /api/meals - all meals
+- GET /api/meals/<day> - meals for a day
+- POST /api/suggest - AI meal suggestion
+
+## Tests
+```bash
+python -m pytest tests/test_routes.py -v
+```
+
+## Docker
+```bash
+docker build -t student-meal-prep .
+docker run -p 5000:5000 -e GEMINI_API_KEY=your_key student-meal-prep
+```
