@@ -49,11 +49,6 @@ The AI generates:
 
 Generate meal plans through the API:
 
-GET /api/meal-plan
-
-Example:
-
-/api/meal-plan?budget=40&diet=Vegetarian&days=7
 
 ## Technologies Used
 
