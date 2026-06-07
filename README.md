@@ -4,7 +4,7 @@ A Flask web app that helps students plan weekly meals and get AI-powered meal su
 
 ## Team
 - Partner A (Sabhareesh) - Backend
-- Partner B - Frontend
+- Partner B (Pranav)- Frontend
 
 ## What it does
 - Weekly meal dashboard (click a day to see meals)
